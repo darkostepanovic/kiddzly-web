@@ -22,7 +22,7 @@ ReactDOM.render(
 
 if ('onbeforeinstall' in window) {
   window.addEventListener('beforeinstallprompt', e => {
-    console.log("EVENT OVDE");
+    alert("EVENT OVDE");
     store.dispatch(appActions.APP.HOMESCREEN_PROMPT, e);
   });
 }
