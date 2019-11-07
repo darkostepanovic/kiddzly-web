@@ -5,6 +5,9 @@ export default handleActions(
     'APP/LOADING': (state, action) => ({
       isLoading: action.payload,
     }),
+    'APP/HOMESCREEN_PROMPT': (state, action) => ({
+      promptEvent: action.payload,
+    }),
   },
-  { isLoading: true },
+  { isLoading: true, promptEvent: null },
 );
