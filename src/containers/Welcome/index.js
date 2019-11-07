@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ItemsCarousel from 'react-items-carousel';
+import { isMobile } from 'react-device-detect';
 
 import WelcomeSlide from '../../components/blocks/WelcomeSlide';
 import Container from '../../components/elements/Container';
@@ -27,6 +28,8 @@ const Welcome = () => {
           chevronWidth={60}
           disableSwipe={false}
           alwaysShowChevrons={false}
+          leftChevron={!isMobile && <button>{'<'}</button>}
+          rightChevron={!isMobile && <button>{'>'}</button>}
           numberOfCards={1}
           slidesToScroll={1}
           outsideChevron={false}

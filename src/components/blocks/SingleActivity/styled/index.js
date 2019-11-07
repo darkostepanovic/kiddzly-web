@@ -12,5 +12,5 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: 390px;
+  min-height: 390px;
 `;

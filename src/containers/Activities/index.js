@@ -8,6 +8,7 @@ import Container from '../../components/elements/Container';
 import validationHelper from '../../helpers/validationHelper';
 import activities from '../../helpers/activities';
 import ItemsCarousel from 'react-items-carousel';
+import { isMobile } from 'react-device-detect';
 
 class Activities extends Component {
   state = {
@@ -76,6 +77,8 @@ class Activities extends Component {
             alwaysShowChevrons={false}
             numberOfCards={1}
             slidesToScroll={1}
+            leftChevron={!isMobile && <button>{'<'}</button>}
+            rightChevron={!isMobile && <button>{'>'}</button>}
             showSlither
             firstAndLastGutter={false}
             activeItemIndex={activeItemIndex}

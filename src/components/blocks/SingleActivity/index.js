@@ -5,9 +5,11 @@ import { Wrapper } from './styled';
 
 const SingleActivity = ({ title, image, id }) => (
   <Wrapper>
-    <img src={image} alt="activity" width="200"/>
+    <img src={image} alt="activity" width="200" />
     <h3>{title}</h3>
-    <Button inverted to={`/activities/${id}`}>Pogledaj ovu aktivnost</Button>
+    <Button inverted to={`/activities/${id}`}>
+      Pogledaj ovu aktivnost
+    </Button>
   </Wrapper>
 );
 
