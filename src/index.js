@@ -21,7 +21,7 @@ ReactDOM.render(
 );
 
 window.addEventListener('beforeinstallprompt', e => {
-  alert('EVENT OVDE');
+  e.preventDefault();
   store.dispatch(appActions.APP.HOMESCREEN_PROMPT, e);
 });
 // If you want your app to work offline and load faster, you can change
