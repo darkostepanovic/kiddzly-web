@@ -13,7 +13,7 @@ const Welcome = () => {
     <Container
       flex
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         flexWrap: 'wrap',
         flexDirection: 'column',
         justifyContent: 'center',
