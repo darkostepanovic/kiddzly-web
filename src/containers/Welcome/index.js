@@ -10,6 +10,7 @@ import slides from '../../helpers/getWelcomeCarouselItems';
 
 const Welcome = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  alert('HELLO');
   return (
     <Container
       flex
