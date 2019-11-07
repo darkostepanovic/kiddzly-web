@@ -20,12 +20,10 @@ ReactDOM.render(
   document.getElementById('root'),
 );
 
-if ('onbeforeinstall' in window) {
-  window.addEventListener('beforeinstallprompt', e => {
-    alert("EVENT OVDE");
-    store.dispatch(appActions.APP.HOMESCREEN_PROMPT, e);
-  });
-}
+window.addEventListener('beforeinstallprompt', e => {
+  alert('EVENT OVDE');
+  store.dispatch(appActions.APP.HOMESCREEN_PROMPT, e);
+});
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
