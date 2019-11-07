@@ -22,7 +22,7 @@ ReactDOM.render(
 
 window.addEventListener('beforeinstallprompt', e => {
   e.preventDefault();
-  store.dispatch(appActions.APP.HOMESCREEN_PROMPT, e);
+  store.dispatch(appActions.app.prompt(e));
 });
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
