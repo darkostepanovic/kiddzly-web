@@ -11,7 +11,15 @@ function App(props) {
   console.log('Hello: ', props);
   return (
     <Router>
-      {props.global.promptEvent && <p>Instaliraj app</p>}
+      {props.global.promptEvent && (
+        <p
+          onClick={() => {
+            props.global.promptEvent.prompt();
+          }}
+        >
+          Instaliraj app
+        </p>
+      )}
       <Switch>
         <Route exact path="/" component={Welcome} />
         <Route exact path="/activities" component={Activities} />
