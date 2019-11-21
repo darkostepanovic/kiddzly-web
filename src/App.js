@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import firebase from 'firebase/app';
+import 'firebase/database';
+import 'firebase/analytics';
 
 import Welcome from './containers/Welcome';
 import Activities from './containers/Activities';
 import ActivityDetail from './containers/ActivityDetail';
 import NotFound from './containers/404';
 
+import config from './config';
+
 function App(props) {
-  console.log('Hello: ', props);
+  useEffect(() => {
+    firebase.initializeApp(config.firebaseConfig);
+    firebase.analytics();
+  }, []);
   return (
     <Router>
       {props.global.promptEvent && (

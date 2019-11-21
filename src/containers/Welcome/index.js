@@ -16,8 +16,9 @@ const Welcome = () => {
       style={{
         minHeight: '100vh',
         flexWrap: 'wrap',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
       }}
     >
       <div style={{ width: '100%' }}>
@@ -47,7 +48,10 @@ const Welcome = () => {
           ))}
         </ItemsCarousel>
       </div>
-      <Button style={{ marginBottom: 60, marginTop: 60 }} to="/activities">
+      <Button
+        style={{ marginBottom: 150, marginTop: 60, alignSelf: 'flex-end' }}
+        to="/activities"
+      >
         Start
       </Button>
     </Container>

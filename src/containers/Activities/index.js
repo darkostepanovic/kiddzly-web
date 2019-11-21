@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ItemsCarousel from 'react-items-carousel';
-import * as firebase from 'firebase';
 import { isMobile } from 'react-device-detect';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 import Header from '../../components/blocks/Header';
 import TextInput from '../../components/blocks/TextInput';
@@ -11,7 +12,6 @@ import Container from '../../components/elements/Container';
 
 import validationHelper from '../../helpers/validationHelper';
 import activities from '../../helpers/activities';
-import config from '../../config';
 
 class Activities extends Component {
   state = {
@@ -22,11 +22,6 @@ class Activities extends Component {
     activeItemIndex: 0,
     visitorSubscribed: false,
   };
-
-  componentDidMount() {
-    firebase.initializeApp(config.firebaseConfig);
-    firebase.analytics();
-  }
 
   handleInputFocus = () => {
     this.setState({ activeField: true, error: false, errorMessage: '' });
