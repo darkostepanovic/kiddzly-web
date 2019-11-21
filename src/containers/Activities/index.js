@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import ItemsCarousel from 'react-items-carousel';
+import * as firebase from 'firebase';
+import { isMobile } from 'react-device-detect';
 
 import Header from '../../components/blocks/Header';
 import TextInput from '../../components/blocks/TextInput';
+import Button from '../../components/elements/Button';
 import SingleActivity from '../../components/blocks/SingleActivity';
 import Container from '../../components/elements/Container';
 
 import validationHelper from '../../helpers/validationHelper';
 import activities from '../../helpers/activities';
-import ItemsCarousel from 'react-items-carousel';
-import { isMobile } from 'react-device-detect';
+import config from '../../config';
 
 class Activities extends Component {
   state = {
@@ -17,7 +20,13 @@ class Activities extends Component {
     error: false,
     errorMessage: '',
     activeItemIndex: 0,
+    visitorSubscribed: false,
   };
+
+  componentDidMount() {
+    firebase.initializeApp(config.firebaseConfig);
+    firebase.analytics();
+  }
 
   handleInputFocus = () => {
     this.setState({ activeField: true, error: false, errorMessage: '' });
@@ -49,6 +58,19 @@ class Activities extends Component {
     this.setState({ activeItemIndex: index });
   };
 
+  handleSubmit = () => {
+    this.handleInputBlur();
+    const { error, value } = this.state;
+    if (!error && value !== '') {
+      firebase
+        .database()
+        .ref('subscribers')
+        .push(value, () => {
+          this.setState({ visitorSubscribed: true });
+        });
+    }
+  };
+
   render() {
     const {
       value,
@@ -56,6 +78,7 @@ class Activities extends Component {
       error,
       errorMessage,
       activeItemIndex,
+      visitorSubscribed,
     } = this.state;
     return (
       <Container
@@ -77,8 +100,8 @@ class Activities extends Component {
             alwaysShowChevrons={false}
             numberOfCards={1}
             slidesToScroll={1}
-            leftChevron={!isMobile && <button>{'<'}</button>}
-            rightChevron={!isMobile && <button>{'>'}</button>}
+            leftChevron={!isMobile ? <button>{'<'}</button> : ''}
+            rightChevron={!isMobile ? <button>{'>'}</button> : ''}
             showSlither
             firstAndLastGutter={false}
             activeItemIndex={activeItemIndex}
@@ -99,19 +122,37 @@ class Activities extends Component {
         </div>
 
         <div style={{ marginBottom: 30, width: '100%' }}>
-          <h3>Ukoliko želite još aktivnosti, unesite Vaš email</h3>
-          <TextInput
-            labelText="Email"
-            type="email"
-            onChange={this.handleInputChange}
-            onFocus={this.handleInputFocus}
-            onBlur={this.handleInputBlur}
-            error={error}
-            errorMessage={errorMessage}
-            fieldActive={activeField}
-            value={value}
-            style={{ width: '100%' }}
-          />
+          <h3>
+            {visitorSubscribed
+              ? 'Uspešno ste prijavili Vaš email'
+              : 'Ukoliko želite još aktivnosti, unesite Vaš email'}
+          </h3>
+          {!visitorSubscribed && (
+            <>
+              <TextInput
+                labelText="Email"
+                type="email"
+                onChange={this.handleInputChange}
+                onFocus={this.handleInputFocus}
+                onBlur={this.handleInputBlur}
+                error={error}
+                errorMessage={errorMessage}
+                fieldActive={activeField}
+                value={value}
+                style={{ width: '100%' }}
+              />
+              <Button
+                style={{ marginTop: 30 }}
+                to=""
+                onClick={e => {
+                  e.preventDefault();
+                  this.handleSubmit();
+                }}
+              >
+                Submit
+              </Button>
+            </>
+          )}
         </div>
       </Container>
     );

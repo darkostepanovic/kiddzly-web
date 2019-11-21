@@ -17,7 +17,7 @@ const Welcome = () => {
         minHeight: '100vh',
         flexWrap: 'wrap',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
       }}
     >
       <div style={{ width: '100%' }}>
@@ -28,8 +28,8 @@ const Welcome = () => {
           chevronWidth={60}
           disableSwipe={false}
           alwaysShowChevrons={false}
-          leftChevron={!isMobile && <button>{'<'}</button>}
-          rightChevron={!isMobile && <button>{'>'}</button>}
+          leftChevron={!isMobile ? <button>{'<'}</button> : ''}
+          rightChevron={!isMobile ? <button>{'>'}</button> : ''}
           numberOfCards={1}
           slidesToScroll={1}
           outsideChevron={false}

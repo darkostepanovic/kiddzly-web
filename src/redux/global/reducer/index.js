@@ -11,5 +11,5 @@ export default handleActions(
       promptEvent: action.payload,
     }),
   },
-  { isLoading: true, promptEvent: null },
+  { isLoading: false, promptEvent: null },
 );
