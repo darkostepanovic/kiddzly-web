@@ -9,4 +9,12 @@ export default styled.p`
   color: ${p => p.theme.colors[p.color] || p.theme.colors.textColor};
   line-height: ${p =>
     p.theme.typography.lineHeight[p.lh] || p.theme.typography.lineHeight.small};
+  &[role='button'] {
+    background-color: transparent;
+    padding: 0;
+    outline: 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+  }
 `;

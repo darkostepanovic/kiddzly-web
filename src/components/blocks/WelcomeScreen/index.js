@@ -36,22 +36,3 @@ const Welcome = () => {
 };
 
 export default Welcome;
-
-// <Card
-//   img={illustration1}
-//   alt="Welcome"
-//   title={{
-//     tag: 'h3',
-//     text: 'Autoperionica',
-//     fontFamily: 'GothamBold',
-//     size: 'lg',
-//   }}
-//   cta={{
-//     text: 'Pogledaj',
-//     to: '/activities',
-//   }}
-// >
-//   <Text size="small">
-//     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//   </Text>
-// </Card>
