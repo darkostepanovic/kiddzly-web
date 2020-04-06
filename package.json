@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "cra-append-sw": "^2.7.0",
     "firebase": "^7.4.0",
+    "polished": "^3.5.1",
     "react": "^16.10.2",
     "react-device-detect": "^1.9.10",
     "react-dom": "^16.10.2",
@@ -19,8 +21,8 @@
     "styled-components": "^4.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start && cra-append-sw --mode dev ./custom-sw.js",
+    "build": "react-scripts build && cra-append-sw ./custom-sw.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
