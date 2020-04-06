@@ -19,15 +19,15 @@ function App(props) {
   }, []);
   return (
     <Router>
-      {props.global.promptEvent && (
-        <p
-          onClick={() => {
-            props.global.promptEvent.prompt();
-          }}
-        >
-          Instaliraj app
-        </p>
-      )}
+      {/*{props.global.promptEvent && (*/}
+      {/*  <p*/}
+      {/*    onClick={() => {*/}
+      {/*      props.global.promptEvent.prompt();*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    Instaliraj app*/}
+      {/*  </p>*/}
+      {/*)}*/}
       <Switch>
         <Route exact path="/" component={WelcomeScreen} />
         <Route exact path="/activities" component={Activities} />
