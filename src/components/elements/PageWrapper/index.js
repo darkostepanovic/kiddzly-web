@@ -12,10 +12,7 @@ export default styled.div`
   @media all and (min-width: 768px) {
     background-size: 80% auto;
   }
-  @media all and (min-width: 1024px) {
-    background-size: 70% auto;
-  }
-  @media all and (min-width: 1900px) {
-    background-size: 53% auto;
+  @media all and (min-width: 1120px) {
+    background-size: auto 100%;
   }
 `;
