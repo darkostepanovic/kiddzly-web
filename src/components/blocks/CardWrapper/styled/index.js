@@ -4,6 +4,7 @@ export const SectionWrapper = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   margin-top: 17px;
+  margin-bottom: 150px;
 
   @media all and (min-width: 1120px) {
     overflow-y: hidden;
