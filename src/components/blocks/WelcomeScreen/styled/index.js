@@ -26,6 +26,11 @@ export const WelcomeContent = styled.div`
       margin-bottom: 50px;
     }
   }
+  a {
+    @media all and (min-width: 1120px) {
+      max-width: 205px;
+    }
+  }
 `;
 
 export const WelcomeContainer = styled(Container)`

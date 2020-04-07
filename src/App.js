@@ -42,4 +42,7 @@ const mapStateToProps = state => ({
   global: state.global,
 });
 
-export default connect(mapStateToProps, null)(App);
+export default connect(
+  mapStateToProps,
+  null,
+)(App);

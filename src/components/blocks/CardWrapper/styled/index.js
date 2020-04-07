@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionWrapper = styled.div`
   overflow-y: auto;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   margin-top: 17px;
 
   @media all and (min-width: 1120px) {
@@ -18,9 +18,7 @@ export const SectionWrapper = styled.div`
     display: none;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: red;
-    border-radius: 35px;
-    width: 3px;
+    display: none;
   }
 `;
 

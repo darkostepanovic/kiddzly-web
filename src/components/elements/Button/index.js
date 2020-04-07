@@ -5,9 +5,11 @@ export default styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
+  border: none;
   background-color: ${p => (p.inverted ? '#fff' : p.theme.colors[p.type])};
   color: ${p => (p.inverted ? p.theme.colors[p.type] : '#fff')};
-  font-size: ${p => p.theme.typography.fontSize[p.size] || 'inherit'};
+  font-size: ${p => p.theme.typography.fontSize[p.size] || '16'}px;
   font-family: 'Gotham', sans-serif;
   height: 50px;
   width: ${p => p.width || '100%'};
