@@ -58,12 +58,12 @@ const Activities = ({ activateDrawer }) => {
         </Text>
         <Text
           as={Link}
-          to="/activities"
+          to="/featured-activities"
           size="small"
           color="primary"
           fontFamily="GothamBold"
         >
-          Pogledaj sve
+          Nazad
         </Text>
       </Container>
       <CardWrapper scroll>{renderAllActivities()}</CardWrapper>
