@@ -56,7 +56,7 @@ const Activities = () => {
           color="primary"
           fontFamily="GothamBold"
         >
-          Pogledaj sve aktivnosti
+          Pogledaj sve
         </Text>
       </Container>
       <CardWrapper scroll>{renderAllActivities()}</CardWrapper>

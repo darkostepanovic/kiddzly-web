@@ -59,7 +59,7 @@ const FeaturedActivities = () => {
           color="primary"
           fontFamily="GothamBold"
         >
-          Pogledaj sve aktivnosti
+          Pogledaj sve
         </Text>
       </Container>
       <CardWrapper>{renderFeaturedActivities()}</CardWrapper>
