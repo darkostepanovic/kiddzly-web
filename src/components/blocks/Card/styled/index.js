@@ -11,7 +11,7 @@ export const CardWrapper = styled.div`
 
 export const ContentWrapper = styled.div`
   padding: 25px;
-  h3 {
+  h5 {
     margin-bottom: 9px;
   }
   p {

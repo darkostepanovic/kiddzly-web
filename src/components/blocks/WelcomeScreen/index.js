@@ -26,7 +26,7 @@ const Welcome = () => {
             egestas ut eget erat. Ut in orci rutrum, tempor lorem at, imperdiet
             nisl.
           </Text>
-          <Button to="/activities" size="14px" type="primary">
+          <Button to="/featured-activities" size="14px" type="primary">
             Vidi aktivnosti
           </Button>
         </WelcomeContent>

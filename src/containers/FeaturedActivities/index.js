@@ -13,35 +13,38 @@ import logo from '../../assets/images/lovo.svg';
 
 import activityData from '../../helpers/activities';
 
-const Activities = () => {
-  const renderAllActivities = () => {
-    return activityData.map(activity => (
-      <Card
-        key={activity.id}
-        img={activity.image}
-        alt={activity.title}
-        title={{
-          tag: 'h3',
-          text: activity.title,
-          fontFamily: 'GothamBold',
-          size: 'lg',
-        }}
-        subtitle={{
-          tag: 'h5',
-          text: activity.subtitle,
-          fontFamily: 'GothamBold',
-          size: 'tiny',
-        }}
-        cta={{
-          text: 'Pogledaj',
-          to: '/activities',
-        }}
-      >
-        <Text size="small">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </Text>
-      </Card>
-    ));
+const FeaturedActivities = () => {
+
+  const renderFeaturedActivities = () => {
+    return activityData.map(activity =>
+      activity.featured ? (
+        <Card
+          key={activity.id}
+          img={activity.image}
+          alt={activity.title}
+          title={{
+            tag: 'h3',
+            text: activity.title,
+            fontFamily: 'GothamBold',
+            size: 'lg',
+          }}
+          subtitle={{
+            tag: 'h5',
+            text: activity.subtitle,
+            fontFamily: 'GothamBold',
+            size: 'tiny',
+          }}
+          cta={{
+            text: 'Pogledaj',
+            to: '/activities',
+          }}
+        >
+          <Text size="small">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </Text>
+        </Card>
+      ) : null,
+    );
   };
   return (
     <>
@@ -59,10 +62,10 @@ const Activities = () => {
           Pogledaj sve aktivnosti
         </Text>
       </Container>
-      <CardWrapper scroll>{renderAllActivities()}</CardWrapper>
+      <CardWrapper>{renderFeaturedActivities()}</CardWrapper>
       <SubscribeBar />
     </>
   );
 };
 
-export default Activities;
+export default FeaturedActivities;

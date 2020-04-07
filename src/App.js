@@ -6,8 +6,8 @@ import 'firebase/database';
 import 'firebase/analytics';
 
 import WelcomeScreen from './components/blocks/WelcomeScreen';
+import FeaturedActivities from './containers/FeaturedActivities';
 import Activities from './containers/Activities';
-import ActivityDetail from './containers/ActivityDetail';
 import NotFound from './containers/404';
 
 import config from './config';
@@ -31,7 +31,11 @@ function App(props) {
       <Switch>
         <Route exact path="/" component={WelcomeScreen} />
         <Route exact path="/activities" component={Activities} />
-        <Route exact path="/activities/:id" component={ActivityDetail} />
+        <Route
+          exact
+          path="/featured-activities"
+          component={FeaturedActivities}
+        />
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
@@ -42,7 +46,4 @@ const mapStateToProps = state => ({
   global: state.global,
 });
 
-export default connect(
-  mapStateToProps,
-  null,
-)(App);
+export default connect(mapStateToProps, null)(App);

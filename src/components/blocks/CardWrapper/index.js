@@ -2,10 +2,10 @@ import React from 'react';
 
 import { SectionWrapper, CardList } from './styled';
 
-const CardWrapper = ({ children }) => {
+const CardWrapper = ({ scroll, children }) => {
   return (
     <SectionWrapper>
-      <CardList>{children}</CardList>
+      <CardList scroll={scroll}>{children}</CardList>
     </SectionWrapper>
   );
 };

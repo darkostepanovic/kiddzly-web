@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Text from '../../elements/Text';
 import { CardWrapper, ContentWrapper } from './styled';
 
-const Card = ({ img, alt, title, cta, children }) => (
+const Card = ({ img, alt, title, subtitle, cta, children }) => (
   <CardWrapper>
     <img src={img} alt={alt} width="100%" height="auto" />
     <ContentWrapper>
@@ -17,6 +17,16 @@ const Card = ({ img, alt, title, cta, children }) => (
         lh={title.lh}
       >
         {title.text}
+      </Text>
+      <Text
+        as={subtitle.tag}
+        inline={subtitle.inline}
+        size={subtitle.size}
+        fontFamily={subtitle.fontFamily}
+        color={subtitle.color}
+        lh={subtitle.lh}
+      >
+        {subtitle.text}
       </Text>
       {children}
       <Text

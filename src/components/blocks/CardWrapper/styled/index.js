@@ -8,7 +8,7 @@ export const SectionWrapper = styled.div`
   @media all and (min-width: 1120px) {
     overflow-y: hidden;
     width: 1060px;
-    margin: 40px auto 0 auto;
+    margin: 40px auto 150px auto;
   }
   @media all and (min-width: 1360px) {
     width: 1300px;
@@ -24,11 +24,12 @@ export const SectionWrapper = styled.div`
 
 export const CardList = styled.div`
   display: grid;
-  grid-template-columns: 265px 265px 265px;
+  grid-template-columns: ${p => (p.scroll ? '1fr' : '265px 265px 265px')};
   grid-column-gap: 20px;
+  grid-row-gap: 20px;
   margin: 0 30px;
   @media all and (min-width: 768px) {
-    grid-template-columns: 430px 430px 430px;
+    grid-template-columns: ${p => (p.scroll ? '1fr 1fr' : '430px 430px 430px')};
   }
   @media all and (min-width: 1120px) {
     grid-template-columns: 340px 340px 340px;
