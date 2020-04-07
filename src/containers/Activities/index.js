@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import activitiesRedux from '../../redux/activities';
 
 import CardWrapper from '../../components/blocks/CardWrapper';
 import Card from '../../components/blocks/Card';
@@ -13,7 +16,8 @@ import logo from '../../assets/images/lovo.svg';
 
 import activityData from '../../helpers/activities';
 
-const Activities = () => {
+const Activities = ({ activateDrawer }) => {
+  console.log('Activities render');
   const renderAllActivities = () => {
     return activityData.map(activity => (
       <Card
@@ -34,7 +38,10 @@ const Activities = () => {
         }}
         cta={{
           text: 'Pogledaj',
-          to: '/activities',
+          to: '#',
+          onClick: () => {
+            activateDrawer(activity.id);
+          },
         }}
       >
         <Text size="small">
@@ -65,4 +72,9 @@ const Activities = () => {
   );
 };
 
-export default Activities;
+const mapDispatchToProps = dispatch => ({
+  activateDrawer: id =>
+    dispatch(activitiesRedux.actions.activities.activateDrawer(id)),
+});
+
+export default connect(null, mapDispatchToProps)(Activities);

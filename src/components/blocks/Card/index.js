@@ -32,10 +32,11 @@ const Card = ({ img, alt, title, subtitle, cta, children }) => (
       <Text
         as={cta.renderAs || Link}
         href={cta.href}
-        to={cta.to || '#'}
+        to={cta.to}
         color={cta.color || 'primary'}
         size={cta.size || 'small'}
         fontFamily={cta.fontFamily || 'GothamBold'}
+        onClick={cta.onClick}
       >
         {cta.text}
       </Text>

@@ -24,6 +24,11 @@ export default createGlobalStyle`
     font-family: ${p => p.theme.typography.fontFamily.regular}, serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    
+    * {
+      box-sizing: border-box;
+    }
    
     a {
       text-decoration: none;

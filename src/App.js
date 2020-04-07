@@ -11,12 +11,14 @@ import Activities from './containers/Activities';
 import NotFound from './containers/404';
 
 import config from './config';
+import ActivityDrawer from './components/blocks/ActivityDrawer';
 
 function App(props) {
   useEffect(() => {
     firebase.initializeApp(config.firebaseConfig);
     firebase.analytics();
   }, []);
+  const { activities } = props;
   return (
     <Router>
       {/*{props.global.promptEvent && (*/}
@@ -38,12 +40,17 @@ function App(props) {
         />
         <Route path="*" component={NotFound} />
       </Switch>
+      <ActivityDrawer
+        id={activities.activeActivityId}
+        active={activities.drawerActive}
+      />
     </Router>
   );
 }
 
 const mapStateToProps = state => ({
   global: state.global,
+  activities: state.activities,
 });
 
 export default connect(mapStateToProps, null)(App);
