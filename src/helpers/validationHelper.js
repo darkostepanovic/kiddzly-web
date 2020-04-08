@@ -2,7 +2,7 @@ export default (type, value, required) => {
   if (required && value === '') {
     return {
       valid: false,
-      message: 'Required field',
+      message: 'Obavezno polje',
     };
   }
   if (value === '') {
@@ -15,7 +15,7 @@ export default (type, value, required) => {
     case 'email':
       return {
         valid: value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i),
-        message: 'Email format not valid',
+        message: 'Email nije odgovarajućeg formata',
       };
     case 'text':
       return {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import Text from '../../../elements/Text';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

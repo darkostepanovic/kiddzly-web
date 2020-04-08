@@ -17,7 +17,6 @@ import logo from '../../assets/images/lovo.svg';
 import activityData from '../../helpers/activities';
 
 const Activities = ({ activateDrawer }) => {
-  console.log('Activities render');
   const renderAllActivities = () => {
     return activityData.map(activity => (
       <Card
