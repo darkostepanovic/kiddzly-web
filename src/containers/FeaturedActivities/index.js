@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -44,9 +44,7 @@ const FeaturedActivities = ({ activateDrawer }) => {
             },
           }}
         >
-          <Text size="small">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Text>
+          <Text size="small">{activity.short}</Text>
         </Card>
       ) : null,
     );

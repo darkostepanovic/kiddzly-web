@@ -5,7 +5,6 @@ import activitiesRedux from '../../../redux/activities';
 
 import Text from '../../elements/Text';
 import Button from '../../elements/Button';
-import DrawerList from '../DrawerList';
 
 import { ContentText, Wrapper } from './styled';
 
@@ -23,33 +22,20 @@ const DrawerContent = ({
   return (
     <Wrapper>
       <img src={img} alt={alt} width="100%" height="auto" />
-      <Text
-        as={title.tag}
-        inline={title.inline}
-        size={title.size}
-        fontFamily={title.fontFamily}
-        color={title.color}
-        lh={title.lh}
-      >
-        {title.text}
+      <Text as="h2" size="xl" fontFamily="GothamBold">
+        {title}
       </Text>
-      <Text
-        as={subtitle.tag}
-        inline={subtitle.inline}
-        size={subtitle.size}
-        fontFamily={subtitle.fontFamily}
-        color={subtitle.color}
-        lh={subtitle.lh}
-      >
-        {subtitle.text}
+      <Text as="h4" size="small" fontFamily="GothamBold">
+        {subtitle}
       </Text>
-      {goals.length > 0 && <DrawerList listTitle="Ciljevi" list={goals} />}
-      {missions.length > 0 && <DrawerList listTitle="Zadaci" list={missions} />}
-      <ContentText>{description}</ContentText>
-      {guides.length > 0 && (
-        <DrawerList listTitle="Smernice za roditelje" list={guides} />
-      )}
+      {/*{goals.length > 0 && <DrawerList listTitle="Ciljevi" list={goals} />}*/}
+      {/*{missions.length > 0 && <DrawerList listTitle="Zadaci" list={missions} />}*/}
+      <ContentText size="small" lh="large">{description}</ContentText>
+      {/*{guides.length > 0 && (*/}
+      {/*  <DrawerList listTitle="Smernice za roditelje" list={guides} />*/}
+      {/*)}*/}
       <Button
+        to="#"
         as="button"
         type="primary"
         size="tiny"

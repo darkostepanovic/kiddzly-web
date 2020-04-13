@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Container from '../../elements/Container';
 import WelcomeLogo from '../../elements/WelcomeLogo';
 import PageWrapper from '../../elements/PageWrapper';
 import Text from '../../elements/Text';

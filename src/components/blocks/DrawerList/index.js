@@ -1,5 +1,4 @@
 import React from 'react';
-import Text from '../../elements/Text';
 import { ListItem, ListTitle } from './styled';
 
 const DrawerList = ({ listTitle, list }) => {

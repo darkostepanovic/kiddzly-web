@@ -6,6 +6,7 @@ export const BackdropWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.3);
   opacity: ${p => (p.active ? 1 : 0)};
   visibility: ${p => (p.active ? 'visible' : 'hidden')};

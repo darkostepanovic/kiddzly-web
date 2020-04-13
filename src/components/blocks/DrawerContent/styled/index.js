@@ -10,5 +10,6 @@ export const Wrapper = styled.div`
 `;
 
 export const ContentText = styled(Text)`
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 `;

@@ -43,9 +43,7 @@ const Activities = ({ activateDrawer }) => {
           },
         }}
       >
-        <Text size="small">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </Text>
+        <Text size="small">{activity.short}</Text>
       </Card>
     ));
   };
